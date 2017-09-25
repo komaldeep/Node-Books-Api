@@ -15,7 +15,8 @@ bookRouter.route('/Books')
     //vvar responseJson = {hello: 'this is my api'};
     Book.find(function (err, books) {
       if(err){
-        console.log(err)
+       // console.log(err)
+        res.status(500).send(err)
       }
       else {
         res.json(books)

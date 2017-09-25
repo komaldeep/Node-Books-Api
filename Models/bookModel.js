@@ -1,5 +1,20 @@
 var mongoose = require('mongoose'),
-     Schema = mongoose.Schema();
+    MongoClient = require('mongodb').MongoClient,
+    Schema = mongoose.Schema();
+
+// mongoose.connect('mongodb://localhost/my_database');
+mongoose.connect('mongodb://localhost/myapp');
+
+// var MongoClient = require('mongodb').MongoClient;
+// // Connect to the db
+// MongoClient.connect("mongodb://localhost:27017/MyDb", function (err, db) {
+//
+//   if(err) throw err;
+//
+//   //Write databse Insert/Update/Query code here..
+//
+// });
+// mongoose.connect('mongodb://localhost/myapp');
 
 var bookModel = mongoose.Schema({
   title:{ type: String },
@@ -8,4 +23,4 @@ var bookModel = mongoose.Schema({
   read: { type: Boolean, default: false }
 });
 
-module.exports = mongoose.model('Book', bookModel)
+module.exports = mongoose.model('Book', bookModel);
