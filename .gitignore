@@ -6,6 +6,7 @@
 
 #idea files
 /.idea
+.idea
 
 # production
 /build

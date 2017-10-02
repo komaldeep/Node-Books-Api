@@ -11,15 +11,15 @@ var port = process.env.PORT || 8000;
 
 var bookRouter = express.Router();
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 bookRouter = require('./Routes/bookRoutes')(Book);
 
 app.use('/api', bookRouter);
 
 app.get('/', function (req, res) {
-  res.send(('Welcome to my API'));
+  res.send(('Welcome to Books API'));
 });
 
 app.listen(port, function () {
